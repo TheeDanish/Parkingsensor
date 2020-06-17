@@ -1,3 +1,7 @@
+# Dette scrip vil koere i baggrunden ved start af RaspberryPI
+# Brug commandoen "top" i terminalen til og finde "python3" processen og tilsvarende PID, for og terminere scriptet skal brugeren koere commandoen "sudo kill [PID for python3 processen]"
+#
+#
 # Denne kode bruges til og indikere en afstand samt give brugeren baade visuel og auditiv information omkring afstanden.
 # Der er lagt en "Mute" knap ind til buzzeren. Dette er den lille knap ved navn "Button v1.2".
 # Man kan se knappens status paa skaermen : True = Lyd ud af buzzer   False = Ingen lyd ud af buzzer
@@ -84,7 +88,7 @@ while True: # Koerer et "while try/loop" med afstandsmaaler
         if distant > 100 : #Et "if loop" som koerer naar distancen er over 100cm
             digitalWrite (led_blue, 0) #led_blue er sat til og vaere slukket = 0
             digitalWrite (led_red, 0) #led_red er sat til at vaere slukket = 0
-            setText ( "Distance = " + str ( dist ) + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
+            setText ( "Distance = " + str ( dist ) + "cm" + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
             time. sleep ( .3 )
         
         elif distant > 40: #Et "if loop" som koerer naar distancen er mellem 40cm og 100cm
@@ -100,7 +104,7 @@ while True: # Koerer et "while try/loop" med afstandsmaaler
                 digitalWrite (buzzer , 0 ) # Hvis vaerdien ER False vil Buzzeren (buzzer) ikke blive aktiveret (buzzer , 0 )
             else: #Hvis knappen (buzz) IKKE er False vil Buzzeren (buzzer) blive aktiveret (buzzer , 1 )
                 digitalWrite (buzzer , 1 )
-            setText ( "Distance = " + str ( dist ) + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
+            setText ( "Distance = " + str ( dist ) + "cm" + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
             time. sleep ( .3 ) #Denne "time. sleep" bliver brugt til hvis Buzzeren (buzzer) bliver aktiveret, at den saa holder tonen i 3 sekunder foer den gaar videre
             digitalWrite (buzzer , 0 ) #Dette slukker Buzzeren (buzzer), for derefter og ramme en "time. sleep". Dette faar buzzeren (buzzer) til og taende og slukker med intervallet : 0,3 sekunder taendt. 0,6 sekunder slukket
             time. sleep ( .6 )
@@ -112,7 +116,7 @@ while True: # Koerer et "while try/loop" med afstandsmaaler
                 digitalWrite (buzzer , 0 ) # Hvis vaerdien ER False vil Buzzeren (buzzer) ikke blive aktiveret (buzzer , 0 )
             else: #Hvis knappen (buzz) IKKE er False vil Buzzeren (buzzer) blive aktiveret (buzzer , 1 )
                 digitalWrite (buzzer , 1 )
-            setText ( "Distance =" + str ( dist ) + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
+            setText ( "Distance = " + str ( dist ) + "cm" + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
             time. sleep ( .25 ) #Denne "time. sleep" bliver brugt til hvis Buzzeren (buzzer) bliver aktiveret, at den saa holder tonen i 0.25 sekunder foer den gaar videre
             digitalWrite (buzzer , 0 ) #Dette slukker Buzzeren (buzzer), for derefter og ramme en "time. sleep". Dette faar buzzeren (buzzer) til og taende og slukker med intervallet : 0,25 sekunder taendt. 0,4 sekunder slukket
             time. sleep ( .4 )
@@ -124,7 +128,7 @@ while True: # Koerer et "while try/loop" med afstandsmaaler
                 digitalWrite (buzzer , 0 ) # Hvis vaerdien ER False vil Buzzeren (buzzer) ikke blive aktiveret (buzzer , 0 )
             else: #Hvis knappen (buzz) IKKE er False vil Buzzeren (buzzer) blive aktiveret (buzzer , 1 )
                 digitalWrite (buzzer , 1 )
-            setText ( "Distance =" + str ( dist ) + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
+            setText ( "Distance = " + str ( dist ) + "cm" + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
             time. sleep ( .1 ) #Denne "time. sleep" bliver brugt til hvis Buzzeren (buzzer) bliver aktiveret, at den saa holder tonen i 0,1 sekunder foer den gaar videre
             digitalWrite (buzzer , 0 ) #Dette slukker Buzzeren (buzzer), for derefter og ramme en "time. sleep". Dette faar buzzeren (buzzer) til og taende og slukker med intervallet : 0,1 sekunder taendt. 0,2 sekunder slukket
             time. sleep ( .2 )
@@ -136,7 +140,7 @@ while True: # Koerer et "while try/loop" med afstandsmaaler
                 digitalWrite (buzzer , 0 ) # Hvis vaerdien ER False vil Buzzeren (buzzer) ikke blive aktiveret (buzzer , 0 )
             else: #Hvis knappen (buzz) IKKE er False vil Buzzeren (buzzer) blive aktiveret (buzzer , 1 )
                 digitalWrite (buzzer , 1 )
-            setText ( "Distance =" + str ( dist ) + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
+            setText ( "Distance = " + str ( dist ) + "cm" + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
             time. sleep ( .1 ) #Denne "time. sleep" bliver brugt til hvis Buzzeren (buzzer) bliver aktiveret, at den saa holder tonen i 0,1 sekunder foer den gaar videre
             digitalWrite (buzzer , 0 ) #Dette slukker Buzzeren (buzzer), for derefter og ramme en "time. sleep". Dette faar buzzeren (buzzer) til og taende og slukker med intervallet : 0,1 sekunder taendt. 0,2 sekunder slukket
             time. sleep ( .2 )
@@ -148,7 +152,7 @@ while True: # Koerer et "while try/loop" med afstandsmaaler
                 digitalWrite (buzzer , 0 ) # Hvis vaerdien ER False vil Buzzeren (buzzer) ikke blive aktiveret (buzzer , 0 )
             else: #Hvis knappen (buzz) IKKE er False vil Buzzeren (buzzer) blive aktiveret (buzzer , 1 )
                 digitalWrite (buzzer , 1 )
-            setText ( "Distance =" + str ( dist ) + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
+            setText ( "Distance = " + str ( dist ) + "cm" + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
             time. sleep ( .05 ) #Denne "time. sleep" bliver brugt til hvis Buzzeren (buzzer) bliver aktiveret, at den saa holder tonen i 0,05 sekunder foer den gaar videre
             
             #Herefter vil baade buzzer og den roede LED slukke. Saa vil vores "if loop" starte forfra og igen taende Buzzeren ( buzzer ) og den roede LED
@@ -162,7 +166,7 @@ while True: # Koerer et "while try/loop" med afstandsmaaler
                 digitalWrite (buzzer , 0 ) # Hvis vaerdien ER False vil Buzzeren (buzzer) ikke blive aktiveret (buzzer , 0 )
             else: #Hvis knappen (buzz) IKKE er False vil Buzzeren (buzzer) blive aktiveret (buzzer , 1 )
                 digitalWrite (buzzer , 1 )
-            setText ( "Distance =" + str ( dist ) + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
+            setText ( "Distance = " + str ( dist ) + "cm" + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
             time. sleep ( .005 ) #Denne "time. sleep" bliver brugt til hvis Buzzeren (buzzer) bliver aktiveret, at den saa holder tonen i 0,05 sekunder foer den gaar videre
             
 #Herefter vil baade buzzer og den roede LED slukke. Saa vil vores "if loop" starte forfra og igen taende Buzzeren ( buzzer ) og den roede LED
