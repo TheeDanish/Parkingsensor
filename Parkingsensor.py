@@ -90,6 +90,7 @@ while True: # Koerer et "while try/loop" med afstandsmaaler
             digitalWrite (led_red, 0) #led_red er sat til at vaere slukket = 0
             setText ( "Distance = " + str ( dist ) + "cm" + "\n " + str (buzz)) #Skriver text ud til LCD med afstand og om knappen er True eller False
             time. sleep ( .3 )
+            digitalWrite (buzzer , 0 )
         
         elif distant > 40: #Et "if loop" som koerer naar distancen er mellem 40cm og 100cm
             digitalWrite (led_blue, 1) #led_blue er sat til og vaere taendt = 1
